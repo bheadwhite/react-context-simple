@@ -13,7 +13,6 @@ const initState = {
 };
 
 const userContext = createContext(initState);
-
 const userReducer = (state, action) => {
   switch (action.type) {
     case userActions.SET_USERNAME:
@@ -38,7 +37,7 @@ export const Provider = ({ children }) => {
   );
 };
 
-// this will tap into that context and return you the specific context you assigned in the "value" of your provider
+// this hook will tap into that context and return you the specific "value" of your provider
 export function useUserContext() {
   const context = useContext(userContext);
   return context;
